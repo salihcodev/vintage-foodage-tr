@@ -1,0 +1,21 @@
+{
+  // extends rules from <airbnb>:
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+
+  // basics rules:
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+
+  // custom rules:
+  "rules": {
+    "no-unused-vars": ["error", { "vars": "local", "args": "none" }],
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+  }
+}
