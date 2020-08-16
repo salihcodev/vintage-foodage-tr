@@ -1,5 +1,11 @@
-import React from "react";
+import React from 'react';
 
-export default function Error() {
-  return <h1>hello form error page</h1>;
-}
+const ErrorPage = () => {
+  return (
+    <div>
+      <h1>Error404</h1>
+    </div>
+  );
+};
+
+export default ErrorPage;

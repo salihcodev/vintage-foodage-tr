@@ -1,5 +1,17 @@
-import React from "react";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function ProductDetails() {
-  return <h1>hello from product details page</h1>;
-}
+const ProductDetailsPage = () => {
+  const { id } = useParams();
+  return (
+    <div>
+      <h1>ProductDetailsPage</h1>
+      <h1>
+        product
+        {id}
+      </h1>
+    </div>
+  );
+};
+
+export default ProductDetailsPage;

@@ -30,5 +30,5 @@ Your app is ready to be deployed!
 <br />
 
 ------------
-created by *ahmed salih*
+created by *ahmed salih* <br />
 [![Twitter Follow](https://img.shields.io/twitter/follow/salihcodev?style=social)](https://twitter.com/salihcodev)
