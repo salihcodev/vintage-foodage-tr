@@ -1,0 +1,50 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+
+// header
+nav.header
+  padding-top: 20px
+  display: flex
+  justify-content: space-around
+  padding: 0 10px
+
+  .appLogo
+    height: 80px
+    text-align: center
+    img
+      width: 100%
+      height: 100%
+      display: block
+
+  ul.navList
+    display: flex
+    width: 60%
+    justify-content: flex-start
+    align-items: center
+    &:last-child
+      width: 50%
+      justify-content: center
+    li.navRoute
+      margin: 10px
+      text-transform: capitalize
+
+  ul.userRoutes
+    li.navRoute
+      &:last-child
+        position: relative
+        padding-top: 10px
+        span.cartIcon
+          font-size: 23px
+          position: relative
+          span.numberFlag
+            position: absolute
+            top: -10px
+            left: 16px
+            display: block
+            width: 21px
+            height: 21px
+            text-align: center
+            font-size: 15px
+            background: #3a57b3
+            border-radius: 50%
+            color: #faebd7

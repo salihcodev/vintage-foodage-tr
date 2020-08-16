@@ -1,8 +1,8 @@
 // ==> BASIC:
 import React from 'react';
+import './styles/app.sass';
 
 // ==> UTILITIES:
-import './styles/app.sass';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // ==> PAGES:
@@ -15,10 +15,16 @@ import LoginPage from './views/login/Login.Page';
 import ProductsPage from './views/products/Products.Page';
 import ProductDetailsPage from './views/productDetails/ProductDetails.Page';
 
+// ==> COMPONENTS:
+import Header from './components/header/Header.Component';
+
 // ==> vintage ROOT APP:
 export default function App() {
   return (
     <Router>
+      {/* header component 'navbar' */}
+      <Header />
+
       <Switch>
         {/* pome page */}
         <Route exact path="/">
