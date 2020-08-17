@@ -1,0 +1,40 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+
+section.notFound404
+  .notFoundContainer
+    text-align: center
+
+  p.notFoundMessage
+    span.notFoundFlag
+      display: block
+      font-size: 120px
+      font-weight: bolder
+
+  a
+    button.homeRedirect
+      cursor: pointer
+      width: 150px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: auto
+      transition: background ease-in-out 0.1s
+      border-radius: 3px
+      background: $primaryColor
+      color: $mainGrey
+      border: 1px solid $primaryDarkColor
+
+      &:hover
+        background: $mainGrey
+        color: $mainBlack
+
+      span.redirectIcon
+        margin-right: 6px
+        text-align: center
+        display: inline-block
+        margin-top: 2px
+
+      span.redirectText
+        font-size: 1rem
