@@ -18,13 +18,13 @@ const CompanyData = [
   {
     id: uID(),
     heading: null,
-    link:
+    text:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam alias perspiciatis doloribus. Optio nisi tenetur aperiam aspernatur corrupti tempore, ad dignissimos neque quibusdam eius officiis obcaecati amet praesentium esse omnis!',
   },
   {
     id: uID(),
     heading: 'company last experiences',
-    link:
+    text:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam alias perspiciatis doloribus. Optio nisi tenetur aperiam aspernatur corru',
   },
 ];
