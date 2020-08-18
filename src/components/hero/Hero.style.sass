@@ -1,0 +1,22 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+div.hero
+  background: linear-gradient(90deg, #0000006b, $primaryTrans),  url("../../assets/mainBcg.jpg") center/cover
+  height: 60vh
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  padding-left: 50px
+  h1.homeHeroHeading
+    font-size: 5rem
+    color: $altGrey
+    font-weight: bolder
+  p.homeHeroDescription
+    font-size: 1.5rem
+    color: $altColor
+    margin-left: 10px
+
+  button
+    @include heroBtn
