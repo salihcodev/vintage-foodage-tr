@@ -4,6 +4,7 @@ import React from 'react';
 // ==> UTILITIES:
 import axios from 'axios';
 import Url from '../utils/URL';
+import ServicesData from './comps-data/Services.data';
 
 export const ProductContext = React.createContext();
 // ==> PROVIDER:
@@ -14,12 +15,16 @@ const ProductProvider = ({ children }) => {
 
   // ==> FETCHED DATA:
   React.useEffect(() => {
-    axios.get(`${Url}/products`).then((vintageProducts) => console.log(vintageProducts));
+    axios
+      .get(`${Url}/products`)
+      .then((vintageProducts) => console.log(vintageProducts));
     return () => {};
   });
 
   return (
-    <ProductContext.Provider value={{ Loading, Products, Featured }}>
+    <ProductContext.Provider
+      value={{ Loading, Products, Featured, ServicesData }}
+    >
       {children}
     </ProductContext.Provider>
   );
