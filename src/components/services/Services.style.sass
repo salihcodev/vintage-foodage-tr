@@ -1,0 +1,54 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+section.services
+  padding: 4rem 0
+  .servicesBody
+    text-align: center
+    padding: 1rem 0
+    h2.serHeading
+    p.serDescription
+    div.serCard
+      box-shadow: $lightShadow
+      padding: 2rem
+      max-height: 24rem
+      margin-top: 2rem
+      &:hover
+        .cardHeader
+          span.icon
+            background: $altColor
+            border: 7px solid $extraTrans
+            color: $mainGrey
+      .cardHeader
+        display: flex
+        justify-content: center
+        align-items: baseline
+        padding: 1rem 0 2rem
+        span.icon
+          width: 4.5rem
+          height: 4.5rem
+          border-radius: 50%
+          display: flex
+          align-items: center
+          justify-content: center
+          margin-right: 1rem
+          border: 3px solid $altColor
+          color: $altColor
+          font-size: 2rem
+          transition: $mainTransition
+        h5.title
+          text-transform: uppercase
+      .cardBody
+        text-align: left
+        p.description
+          color: $altBlack
+      .cardFooter
+        text-align: left
+        ul
+          li.listItem
+            margin-top: 2px
+            span.icon
+              font-size: 22px
+              margin-right: 8px
+            span.text
