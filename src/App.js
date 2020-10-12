@@ -51,12 +51,12 @@ export default function App() {
           <LoginPage />
         </Route>
 
-        {/* products page */}
+        {/* recipes page */}
         <Route exact path="/recipes">
           <ProductsPage />
         </Route>
 
-        {/* productDetails page */}
+        {/* recipesDetails page */}
         <Route path="/recipes/:id">
           <ProductDetailsPage />
         </Route>
@@ -69,3 +69,28 @@ export default function App() {
     </Router>
   );
 }
+
+// //  {/* recipes menu page */}
+//  <Route exact path="/recipes/drinks">
+//  <DrinksPage />
+// </Route>
+
+// {/* recipes menu page */}
+// <Route exact path="/recipes/food">
+//  <FoodPage />
+// </Route>
+
+// {/* recipes menu page */}
+// <Route exact path="/recipes/deserters">
+//  <DesertersPage />
+// </Route>
+
+// {/* recipesDetails page */}
+// <Route path="/recipes/drinks/:id">
+//  <ProductDetailsPage />
+// </Route>
+
+// {/* recipesDetails page */}
+// <Route path="/recipes/food/:id">
+//  <ProductDetailsPage />
+// </Route>
