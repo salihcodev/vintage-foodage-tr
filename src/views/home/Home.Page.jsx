@@ -2,7 +2,6 @@
 import React from 'react';
 
 // ==> UTILITIES:
-import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 // ==> COMPONENTS:
@@ -14,10 +13,10 @@ const HomePage = () => {
     <>
       <section className="homePageViewer">
         <Hero>
-          <Link to="/products">
-            <Button type="button" className="HomeHeroToProducts">
-              Browse to products
-            </Button>
+          <Link to="/recipes">
+            <button type="button" className="HomeHeroToProducts">
+              All Recipes
+            </button>
           </Link>
         </Hero>
       </section>

@@ -1,7 +1,14 @@
 @import "./vars"
 
 @mixin heroBtn
-  background: $mainGrey
-  color: $mainBlack
-  border: 2px solid $altGrey
-  
+  background: none
+  color: $altBlack
+  border: 2px solid $altColor
+  padding: 0.7rem
+  border-radius: 2rem
+  font-weight: bolder
+  background: none
+  &:hover
+    background: $altColor
+    color: $offWhite
+    transition: $mainTransition

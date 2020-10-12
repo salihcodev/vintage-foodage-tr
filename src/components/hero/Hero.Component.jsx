@@ -7,22 +7,26 @@ import './Hero.style.sass';
 import { Container } from 'react-bootstrap';
 
 // ==> COMPONENT DATA:
-const HeroHeading = 'Think, Code, Deploy';
-const HeroDescription = 'Embrace your choices  --we do';
+const HeroFlag = 'Old family recipes';
+const HeroHeading = 'Healthy Organic Food';
+const HeroDescription =
+  'Feel the friendly atmosphere of our family restaurant.';
 
 // ==> COMPONENT:
 const Hero = ({ children }) => {
   return (
     <>
       <div className="hero">
-        <div className="heroContainer">
-          <Container>
+        <Container>
+          <section className="heroContainer">
+            <p className="heroFlag">
+              <span>{HeroFlag}</span>
+            </p>
             <h1 className="homeHeroHeading">{HeroHeading}</h1>
             <p className="homeHeroDescription">{HeroDescription}</p>
-
             {children}
-          </Container>
-        </div>
+          </section>
+        </Container>
       </div>
     </>
   );

@@ -4,14 +4,33 @@
 
 div.hero
   background: url("../../assets/main-hero-bkg.svg") center/cover
-  height: calc( 100vh - 80px )
+  height: calc( 100vh - 4rem )
   display: flex
   align-items: center
   justify-content: flex-start
-  padding-left: 50px
+  padding-left: 70px
+  section.heroContainer
+    width: 70vw
+  p.heroFlag
+    span
+      position: relative
+      font-weight: bold
+      font-family: $italicFont
+      font-size: 1.5rem
+      z-index: 1
+      &::after
+        content: ''
+        height: 0.5rem
+        background: $altTrans
+        display: block
+        position: absolute
+        top: 1rem
+        left: 0
+        right: 0
+        z-index: -1
   h1.homeHeroHeading
     font-size: 5rem
-    color: $altGrey
+    color: $mainBlack
     font-weight: bolder
   p.homeHeroDescription
     font-size: 1.5rem

@@ -52,12 +52,12 @@ export default function App() {
         </Route>
 
         {/* products page */}
-        <Route exact path="/products">
+        <Route exact path="/recipes">
           <ProductsPage />
         </Route>
 
         {/* productDetails page */}
-        <Route path="/products/:id">
+        <Route path="/recipes/:id">
           <ProductDetailsPage />
         </Route>
 

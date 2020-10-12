@@ -9,9 +9,9 @@ import appLogo from '../../assets/app-logo.svg';
 
 // ==> component data:
 const routingLinks = [
-  { id: 1, text: 'home', path: '/' },
-  { id: 2, text: 'about', path: '/about' },
-  { id: 3, text: 'products', path: '/products' },
+  { id: 1, text: 'Home', path: '/' },
+  { id: 2, text: 'About', path: '/about' },
+  { id: 3, text: 'Recipes', path: '/recipes' },
 ];
 
 const Header = () => {
