@@ -1,0 +1,94 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+.recipesPage
+.recipesPageHeader
+  margin-top: 2rem
+  border-radius: 1rem
+  padding: 3rem 2rem
+  background: url("../../assets/body-cover.svg") center/cover
+  h2
+    font-weight: bolder
+    font-family: $italicFont
+    color: $mainBlack
+    text-transform: uppercase
+    text-align: center
+    letter-spacing: $mainSpacing
+    word-spacing: 1rem
+.recipesPageWrapper
+  margin-top: 5rem
+  aside.recipesFilter
+    padding: 2rem 1rem
+  section.recipesContainer
+    padding: 2rem 1rem
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(3, 20rem 20rem 15rem)
+    min-height: 100vh
+    grid-gap: 1.5rem
+    .recipeCard
+      position: relative
+      opacity: 0.8
+      border: 2px solid #fff
+      transition: $altTransition
+      padding: 1rem
+      width: 100%
+      height: 100%
+      border-radius: 0.7rem
+      display: flex
+      align-items: center
+      justify-content: center
+      &:nth-child(2)
+        grid-column: auto / span 2
+      &:nth-child(3)
+        grid-column: auto / span 2
+        grid-row: auto / span 2
+      &:nth-child(6)
+        grid-column: auto / span 2
+        grid-row: auto / span 2
+      &:hover
+        opacity: 1
+        .cardContent
+          opacity: 1
+    .cardContent
+      opacity: 0
+      text-align: center
+      transition: $altTransition
+      h3.recipeName
+        color: $mainGrey
+        margin-bottom: 3rem
+      .btnsContainer
+        button
+          display: block
+          margin: auto
+          margin-bottom: 1rem
+          outline: none
+        button.seeFullRecipe
+          @include heroBtn
+          background: $trabsWhite
+          a
+            text-decoration: none
+            color: $mainBlack
+            font-family: $italicFont
+            letter-spacing: $altSpacing
+            &:hover
+              color: $mainGrey
+        button.putRecipeToCart
+          @include heroBtn
+          background: $altTrans
+          a
+            color: $mainGrey
+            text-decoration: none
+            font-family: $italicFont
+            letter-spacing: $altSpacing
+      span.recipePrice
+        font-family: $slabHeadingFont
+        color: $mainBlack
+        background: $altTrabsWhite
+        position: absolute
+        bottom: -0.4rem
+        left: -0.5rem
+        font-size: 18px
+        padding: 0.7rem 1rem
+        border-radius: 0.5rem

@@ -12,6 +12,7 @@
     "react-icons": "^3.8.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
+    "contentful": "^7.14.3",
     "uuid": "^8.3.0"
   },
   "scripts": {
