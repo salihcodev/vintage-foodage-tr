@@ -2,7 +2,7 @@ import { GiFruitBowl } from 'react-icons/gi';
 import { FaBalanceScaleRight } from 'react-icons/fa';
 import { FaCocktail } from 'react-icons/fa';
 
-const ServicesData = [
+const servicesData = [
   {
     icon: GiFruitBowl(),
     name: 'Ingredients',
@@ -31,4 +31,4 @@ const ServicesData = [
   },
 ];
 
-export default ServicesData;
+export default servicesData;

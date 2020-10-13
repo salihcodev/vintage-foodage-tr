@@ -12,8 +12,8 @@ import CartPage from './views/cart/Cart.Page';
 import CheckoutPage from './views/checkout/Checkout.Page';
 import ErrorPage from './views/error/Error.Page';
 import LoginPage from './views/login/Login.Page';
-import ProductsPage from './views/products/Products.Page';
-import ProductDetailsPage from './views/productDetails/ProductDetails.Page';
+import RecipesPage from './views/recipes/Recipes.Page'
+import RecipeDetailsPage from './views/recipe-details/RecipeDetails.Page';
 
 // ==> COMPONENTS:
 import Header from './components/header/Header.Component';
@@ -53,12 +53,12 @@ export default function App() {
 
         {/* recipes page */}
         <Route exact path="/recipes">
-          <ProductsPage />
+          <RecipesPage />
         </Route>
 
         {/* recipesDetails page */}
         <Route path="/recipes/:id">
-          <ProductDetailsPage />
+          <RecipeDetailsPage />
         </Route>
 
         {/* error page */}

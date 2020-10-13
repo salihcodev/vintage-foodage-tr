@@ -21,7 +21,7 @@ const serDescription =
 
 // ==> COMPONENT:
 const Services = () => {
-  const { ServicesData } = React.useContext(ProductContext);
+  const { servicesData } = React.useContext(ProductContext);
   return (
     <Container>
       <section className="services">
@@ -31,9 +31,9 @@ const Services = () => {
           <p className="serDescription">{serDescription}</p>
           <div className="serCards">
             <Row>
-              {ServicesData.map((ser) => (
-                <Col>
-                  <div key={uuid()} className="serCard card">
+              {servicesData.map((ser) => (
+                <Col key={uuid()}>
+                  <div className="serCard card">
                     <div className="cardHeader">
                       <span className="icon">{ser.icon}</span>
                       <h5 className="title">{ser.name}</h5>
@@ -44,7 +44,7 @@ const Services = () => {
                     <div className="cardFooter">
                       <ul>
                         {ser.list.map((item) => (
-                          <li className="listItem">
+                          <li key={uuid()} className="listItem">
                             <span className="icon">{BsArrowRight()}</span>
                             <span className="text">{item}</span>
                           </li>
