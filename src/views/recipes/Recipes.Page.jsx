@@ -2,14 +2,15 @@
 import React from 'react';
 import './style.sass';
 // ==> UTILITIES:
-import { ProductContext } from '../../context/products.Context';
+import { ProductContext } from '../../context/recipes.context';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 // ==> COMPONENTS:
+import RecipeCard from '../../components/recipe-card/RecipesCard';
 
 // ==> VIEWER:
-const ProductsPage = () => {
+const RecipesPage = () => {
   const { recipes } = React.useContext(ProductContext);
   return (
     <div className="recipesPage">
@@ -27,38 +28,9 @@ const ProductsPage = () => {
             </Col>
             <Col lg={10} md={9} xs={12}>
               <section className="recipesContainer">
-                {recipes.map((recInfo) => {
-                  const { id, recipeName, slug, price, recipeImgs } = recInfo;
-                  // get first image and title of recipe.
-                  const coverImg = recipeImgs[0].url;
-                  const coverImgTitle = recipeImgs[0].title;
-
-                  // set the style to card component
-                  const recipeCardImgStyle = {
-                    background: `linear-gradient(45deg, #80c29d44, #0007), url(${coverImg}) center/cover`,
-                  };
-                  return (
-                    <div
-                      key={id}
-                      className="recipeCard"
-                      style={recipeCardImgStyle}
-                      title={coverImgTitle}
-                    >
-                      <div className="cardContent">
-                        <h3 className="recipeName">{recipeName}</h3>
-                        <div className="btnsContainer">
-                          <button type="button" className="seeFullRecipe">
-                            <Link to={`/recipes/${slug}`}>full details</Link>
-                          </button>
-                          <button type="button" className="putRecipeToCart">
-                            <Link to="/cart-contents">add to cart</Link>
-                          </button>
-                        </div>
-                        <span className="recipePrice">${price}</span>
-                      </div>
-                    </div>
-                  );
-                })}
+                {recipes.map((recInfo) => (
+                  <RecipeCard recInfo={recInfo} />
+                ))}
               </section>
             </Col>
           </Row>
@@ -68,4 +40,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default RecipesPage;
