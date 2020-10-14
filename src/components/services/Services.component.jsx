@@ -7,7 +7,7 @@ import './Services.style.sass';
 import Title from '../title/Title.component';
 
 // ==> UTILITIES:
-import { ProductContext } from '../../context/products.Context';
+import { ProductContext } from '../../context/recipes.context';
 import { Container, Row, Col } from 'react-bootstrap';
 import { v4 as uuid } from 'uuid';
 import { BsArrowRight } from 'react-icons/bs';
