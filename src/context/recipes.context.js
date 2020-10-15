@@ -14,6 +14,7 @@ const ProductProvider = ({ children }) => {
   const [loading, setLoading] = React.useState(false);
   const [recipes, setRecipes] = React.useState([]);
   const [featured, setFeatured] = React.useState([]);
+  const [cartList, setCart] = React.useState([]);
 
   React.useEffect(() => {
     client
@@ -24,7 +25,7 @@ const ProductProvider = ({ children }) => {
       .catch(console.error);
   }, []);
 
-  // calculate contentful API
+  // ==> CALCULATE CONTENTFUL API:
   const destructeurAPICall = (items) => {
     let finalRecipesArr = items.map((item) => {
       // get th ID
@@ -73,6 +74,10 @@ const ProductProvider = ({ children }) => {
     return storedRecipe ? JSON.parse(storedRecipe) : {};
   };
 
+  // ==> SETUP CART FUNCTIONALITY:
+  const addRecipeToCart = (id) => {};
+
+  console.log(cartList);
   return (
     <ProductContext.Provider
       value={{
@@ -80,6 +85,7 @@ const ProductProvider = ({ children }) => {
         recipes,
         featured,
         servicesData,
+        addRecipeToCart,
         getClickedRecipe,
         getLocalStorageRecipe,
       }}

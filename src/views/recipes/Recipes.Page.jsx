@@ -29,7 +29,7 @@ const RecipesPage = () => {
             <Col lg={10} md={9} xs={12}>
               <section className="recipesContainer">
                 {recipes.map((recInfo) => (
-                  <RecipeCard recInfo={recInfo} />
+                  <RecipeCard key={recInfo.id} recInfo={recInfo} />
                 ))}
               </section>
             </Col>

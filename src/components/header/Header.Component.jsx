@@ -42,7 +42,7 @@ const Header = () => {
             <Link to="/cart-contents">
               <span className="cartIcon">
                 <AiOutlineShoppingCart />
-                <span className="numberFlag">4</span>
+                <span className="numberFlag">0</span>
               </span>
             </Link>
           </li>

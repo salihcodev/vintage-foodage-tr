@@ -7,13 +7,55 @@ div.singleRecipeWrapper
   .lightInfo
     padding: 2rem 1rem 0
     span.price
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0rem auto 2rem
+      font-size: 2rem
+      font-weight: bold
+      color: $altBlack
     span.popular
+      padding: 1rem 0.5rem
+      text-align: center
+      margin: 1rem 0
+      background: $alert
+      border: 1px solid $alertBorder
+      display: block
+      border-radius: 0.4rem
+      color: $alertColor
+      font-weight: bold
     p.deliveryTime
+      color: $altBlack
+      font-size: 17px
     div.rating
-    a.addToCart
       margin-top: 2rem
+      p.ratingPerc
+        margin: 0
+        padding: 0
+    .testimonialsWrapper
+      padding-top: 3rem
+      h6
+        text-transform: uppercase
+        color: $primaryColor
+      div.testimonials
+        padding: 1rem 0
+        div.testiSlid
+          border: 1px solid $primaryColor
+          height: 10rem
+          border-radius: 0.4rem
+          display: flex
+          align-items: center
+          text-align: center
+          font-style: italic
+          color: $altBlack
+          font-size: 18px
+          padding: 1rem
+          margin-right: 1rem
+    a.addToCart
+      margin-top: 5rem
       text-align: center
       display: block
+      max-width: 13rem
       text-decoration: none
       @include heroBtn
 
@@ -45,7 +87,34 @@ div.singleRecipeWrapper
 
     section.recipeInfo
       h2
-        margin-top: 1rem
       p.dec
         margin-top: 1rem
         color: $altDarkGrey
+
+      div.ingredients
+        margin-top: 3rem
+        ul
+          p.flags
+            margin: 0
+            padding: 0
+            display: flex
+            justify-content: space-between
+            margin-top: 1rem
+            font-weight: bold
+            color: $primaryColor
+            margin-bottom: 1rem
+          li.ing
+            padding: 0.5rem 0
+            p
+              margin: 0
+              padding: 0
+              display: flex
+              justify-content: space-between
+              span
+                font-weight: normal
+                color: $altBlack
+              span.title
+              span.quantity
+
+            &:not(:last-child)
+              border-bottom: 1px solid $altGrey
