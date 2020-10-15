@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 // ==> COMPONENTS:
 import Hero from '../../components/hero/Hero.Component';
 import Services from '../../components/services/Services.component';
+import PopularRecipes from '../../components/popular-recipes/PopularRecipes.component';
 
 // ==> VIEWER:
 const HomePage = () => {
@@ -19,9 +20,12 @@ const HomePage = () => {
               All Recipes
             </button>
           </Link>
-        </Hero>{' '}
+        </Hero>
         {/* hero */}
-        <Services /> {/* services */}
+        <PopularRecipes />
+        {/* pop-recipes */}
+        <Services />
+        {/* services */}
       </section>
     </>
   );
