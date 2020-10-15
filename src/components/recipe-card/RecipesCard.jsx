@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 
 // ==> VIEWER:
 const RecipeCard = ({ recInfo }) => {
-  const { getClickedRecipe } = React.useContext(ProductContext);
+  const { getClickedRecipe, addRecipeToCart } = React.useContext(
+    ProductContext,
+  );
   const { id, recipeName, slug, price, recipeImgs } = recInfo;
   // get first image and title of recipe.
   const coverImg = recipeImgs[0].url;
@@ -33,7 +35,11 @@ const RecipeCard = ({ recInfo }) => {
           >
             full details
           </Link>
-          <Link className="putRecipeToCart" to="/cart-contents">
+          <Link
+            className="putRecipeToCart"
+            to="/recipes"
+            onClick={() => addRecipeToCart(id)}
+          >
             add to cart
           </Link>
         </div>
