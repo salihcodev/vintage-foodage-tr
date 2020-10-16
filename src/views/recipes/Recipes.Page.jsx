@@ -12,6 +12,11 @@ import RecipeCard from '../../components/recipe-card/RecipesCard';
 // ==> VIEWER:
 const RecipesPage = () => {
   const { recipes } = React.useContext(ProductContext);
+
+  // reset window title:
+  React.useEffect(() => {
+    document.title = `Foodage | Recipes`;
+  });
   return (
     <div className="recipesPage">
       {/* recipes header */}

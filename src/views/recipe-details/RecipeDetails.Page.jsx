@@ -38,15 +38,19 @@ const RecipesDetailsPage = () => {
     recipeName,
     deliveryTime,
     popular,
-    slug,
     id,
     price,
     recipeDetails,
     ingredients: { ingredients },
     recipeImgs,
   } = getLocalStorageRecipe();
+
   // get first image and title of recipe.
   const coverImg = recipeImgs[0].url;
+    // reset window title:
+    React.useEffect(() => {
+      document.title = `Foodage | ${recipeName}`;
+    });
   return (
     <div className="singleRecipeWrapper">
       <Container fluid>

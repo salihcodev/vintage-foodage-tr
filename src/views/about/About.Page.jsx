@@ -134,6 +134,10 @@ const CompanyFounders = [
 
 // ==> VIEWER:
 const AboutPage = () => {
+  // reset window title:
+  React.useEffect(() => {
+    document.title = `Foodage | About`;
+  });
   return (
     <>
       <article className="aboutCompanyBody">
