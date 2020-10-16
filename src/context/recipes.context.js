@@ -5,6 +5,8 @@ import React from 'react';
 import axios from 'axios';
 import { client } from '../utils/contentful';
 import servicesData from './comps-data/Services.data';
+import teamMembers from './comps-data/TeamMembers.data';
+import openingData from './comps-data/Opening.data';
 
 // create react context:
 export const ProductContext = React.createContext();
@@ -14,6 +16,7 @@ const ProductProvider = ({ children }) => {
   const [loading, setLoading] = React.useState(false);
   const [recipes, setRecipes] = React.useState([]);
   const [featured, setFeatured] = React.useState([]);
+  const [toTopBtn, setToTopBtn] = React.useState(false);
   const [cartList, setCart] = React.useState([]);
 
   React.useEffect(() => {
@@ -75,17 +78,34 @@ const ProductProvider = ({ children }) => {
   };
 
   // ==> SETUP CART FUNCTIONALITY:
-  const addRecipeToCart = (id) => {};
+  // const addRecipeToCart = (id) => {};
 
-  console.log(cartList);
+  // ==> SETUP TO TOP BUTTON FUNCTIONALITY:
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  function scrolledSpace(e) {
+    if (this.scrollY >= 900) setToTopBtn(true);
+    else setToTopBtn(false);
+  }
+  window.onscroll = scrolledSpace;
+
   return (
     <ProductContext.Provider
       value={{
         loading,
         recipes,
+        goToTop,
         featured,
+        toTopBtn,
+        teamMembers,
+        openingData,
         servicesData,
-        addRecipeToCart,
         getClickedRecipe,
         getLocalStorageRecipe,
       }}

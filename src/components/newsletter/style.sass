@@ -1,0 +1,65 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+section.newsletterWrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 70vh
+  padding: 3rem 0
+  background: linear-gradient(to bottom, #000000c7,#fff4), url("../../assets/cooking.jpeg") center/cover
+  div.newsletter
+    text-align: center
+    h5.newsFlag
+      span.flag
+        color: $altGrey
+        position: relative
+        font-weight: bold
+        font-family: $italicFont
+        font-size: 1.5rem
+        z-index: 1
+        &::after
+          content: ''
+          height: 0.5rem
+          background: $altBlack
+          display: block
+          position: absolute
+          top: 1rem
+          left: 0
+          right: 0
+          z-index: -1
+    h2.newsHeading
+      font-size: 3rem
+      font-weight: bold
+      margin: 3rem 0 1rem
+      color: $altGrey
+    p.newsDec
+      color: $altGrey
+      font-size: 1.3rem
+    .newsForm
+      form
+        display: flex
+        justify-content: space-around
+        align-items: center
+        margin-top: 5rem
+        > input[type="email"]
+          margin-right: 1.5rem
+          flex-grow: 1
+          background: none
+          outline: none
+          color: $offWhite
+          border: 1px solid $altraTrabsWhite
+          padding: 1rem 2rem
+          border-radius: 3rem
+          background: $altraTrabsWhite
+          &::placeholder
+            color: $offWhite          
+        > input[type="submit"]
+          @include heroBtn
+          border-color: transparent
+          background: $altColor
+          color: $offWhite
+          &:hover
+            color: $mainBlack
+            background: $offWhite

@@ -1,0 +1,49 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+section.BookingWrapper
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 70vh
+  padding: 3rem 0
+  background: linear-gradient(to bottom, #0009,#0003), url("../../assets/booking.jpg") center/cover
+  div.bookATable
+    padding: 2rem 0
+    text-align: center
+    h5.recipeFlag
+      span.flag
+        color: $altGrey
+        position: relative
+        font-weight: bold
+        font-family: $italicFont
+        font-size: 1.5rem
+        z-index: 1
+        &::after
+          content: ''
+          height: 0.5rem
+          background: $altBlack
+          display: block
+          position: absolute
+          top: 1rem
+          left: 0
+          right: 0
+          z-index: -1
+    h2.bookHeading
+      font-size: 3rem
+      font-weight: bold
+      margin: 3rem 0 1rem
+      color: $altGrey
+    p.bookDec
+      color: $altGrey
+      font-size: 1.3rem
+    button.bookBtn
+      @include heroBtn
+      border-color: $altGrey
+      background: $offWhite
+      margin-top: 5rem;
+      &:hover
+        border-color: $altColor
+
+
