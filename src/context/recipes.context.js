@@ -7,6 +7,12 @@ import { client } from '../utils/contentful';
 import servicesData from './comps-data/Services.data';
 import teamMembers from './comps-data/TeamMembers.data';
 import openingData from './comps-data/Opening.data';
+import {
+  Projects,
+  Support,
+  Company,
+  companyExperience,
+} from './comps-data/Footer.data';
 
 // create react context:
 export const ProductContext = React.createContext();
@@ -89,7 +95,7 @@ const ProductProvider = ({ children }) => {
     });
   };
 
-  function scrolledSpace(e) {
+  function scrolledSpace() {
     if (this.scrollY >= 900) setToTopBtn(true);
     else setToTopBtn(false);
   }
@@ -104,6 +110,10 @@ const ProductProvider = ({ children }) => {
         featured,
         toTopBtn,
         teamMembers,
+        Projects,
+        Support,
+        Company,
+        companyExperience,
         openingData,
         servicesData,
         getClickedRecipe,

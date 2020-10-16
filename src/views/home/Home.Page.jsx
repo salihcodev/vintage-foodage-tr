@@ -12,10 +12,14 @@ import BookingTable from '../../components/booking-table/BookingTable.Component'
 import Team from '../../components/team/Team.component';
 import Opening from '../../components/opening/Opening.component';
 import NewsLetter from '../../components/newsletter/Newsletter.Component';
-import Contact from "../../components/contact/Contact.component"
+import Contact from '../../components/contact/Contact.component';
 
 // ==> VIEWER:
 const HomePage = () => {
+  // reset window title:
+  React.useEffect(() => {
+    document.title = `Foodage | Home`;
+  });
   return (
     <>
       <section className="homePageViewer">

@@ -1,0 +1,65 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+
+footer.footer
+  padding: 20px 10px 10px
+  min-height: 200px
+  border-top: 1px solid $altGrey
+  margin-top: 50px
+  .footerWing
+    margin-top: 20px
+    h5
+      color: $altBlack
+  .companyIdentity
+    max-width: 20rem
+    padding: 1rem
+    text-align: center
+    @media screen and ( max-width: 800px )
+      display: flex
+      align-items: center
+      justify-content: center
+    .identityDesc
+      color: $altDarkGrey
+  .footerLinks
+    height: 100%
+    padding: 5px
+    h6.colDescription
+      color: $altBlack
+      padding: 2px 5px
+      font-weight: bolder
+      font-size: 13px
+    ul.siteMap
+      list-style: none
+      margin: 0
+      padding: 0
+      margin-top: 20px
+      li
+        padding: 3px 5px
+        font-size: 14px
+        a
+          color: $altBlack
+          text-transform: capitalize
+  .lastFooter
+    margin-top: 30px
+    border-top: 1px solid $altGrey
+    width: 100%
+    padding: 15px 0
+    .policyAndPrivacy
+      display: flex
+      justify-content: flex-start
+      p.policy
+        color: $altBlack
+        a
+          color: $altBlack
+          padding: 1px 5px
+          transition: all ease 0.3s
+          &:not(:first-of-type)
+            border-left: 1px solid $altGrey
+          &:hover
+            color: $mainBlack
+    .copyrightsWrapper
+      display: flex
+      justify-content: flex-end
+      a.author
+        padding: 0 5px
+        color: $altColor

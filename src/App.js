@@ -14,6 +14,7 @@ import ErrorPage from './views/error/Error.Page';
 import LoginPage from './views/login/Login.Page';
 import RecipesPage from './views/recipes/Recipes.Page';
 import RecipeDetailsPage from './views/recipe-details/RecipeDetails.Page';
+import Footer from './components/footer/Footer.component';
 
 // ==> COMPONENTS:
 import Header from './components/header/Header.Component';
@@ -69,31 +70,8 @@ export default function App() {
           <ErrorPage />
         </Route>
       </Switch>
+      {/* footer */}
+      <Footer />
     </Router>
   );
 }
-
-// //  {/* recipes menu page */}
-//  <Route exact path="/recipes/drinks">
-//  <DrinksPage />
-// </Route>
-
-// {/* recipes menu page */}
-// <Route exact path="/recipes/food">
-//  <FoodPage />
-// </Route>
-
-// {/* recipes menu page */}
-// <Route exact path="/recipes/deserters">
-//  <DesertersPage />
-// </Route>
-
-// {/* recipesDetails page */}
-// <Route path="/recipes/drinks/:id">
-//  <ProductDetailsPage />
-// </Route>
-
-// {/* recipesDetails page */}
-// <Route path="/recipes/food/:id">
-//  <ProductDetailsPage />
-// </Route>

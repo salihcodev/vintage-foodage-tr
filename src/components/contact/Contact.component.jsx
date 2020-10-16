@@ -55,9 +55,13 @@ const Contact = () => {
             </Form>
           </div>
         </Container>
-          <div className="map">
-            <iframe frameBorder="0"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d440154.2128229136!2d30.821290695361338!3d30.472798731845028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c97111b6991d%3A0xb334d5f3a8a4071c!2sStereo%20Restaurant%20And%20Cafe!5e0!3m2!1sen!2seg!4v1602852272442!5m2!1sen!2seg"></iframe>
-          </div>
+        <div className="map">
+        <h2>Where exactly do we live?</h2>
+          <iframe
+            frameBorder="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d440154.2128229136!2d30.821290695361338!3d30.472798731845028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c97111b6991d%3A0xb334d5f3a8a4071c!2sStereo%20Restaurant%20And%20Cafe!5e0!3m2!1sen!2seg!4v1602852272442!5m2!1sen!2seg"
+          ></iframe>
+        </div>
       </section>
     </>
   );
