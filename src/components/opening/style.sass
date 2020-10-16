@@ -1,0 +1,53 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+section.opening
+  padding: 4rem 0
+  .openingBody
+    text-align: center
+    padding: 1rem 0
+    h2.openHeading
+      color: $altBlack
+      margin-top: 3rem
+      font-size: 2rem
+    p.openDescription
+      color: $altBlack
+      font-size: 18px
+    div.openCards
+      margin-top: 3rem
+      padding: 2rem
+      min-height: 24rem
+      .openCard
+        padding: 1rem
+        transition: $altTransition
+        &:hover
+          margin-top: -2rem
+          box-shadow: $lightShadow
+        .cardHeader
+          padding: 1rem 0 2rem
+          h5.title
+            text-transform: uppercase
+          div.cardImg
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 2rem 0
+            img
+              width: 8rem
+              height: 8rem
+              border-radius: 50%
+              display: flex
+              align-items: center
+              justify-content: center
+              margin-right: 1rem
+              transition: $mainTransition
+        .cardFooter
+          text-align: center
+          ul
+            li.listItem
+              color: $altBlack
+              padding: 1rem 0
+              font-size: 18px
+              &:not(:last-child)
+                border-bottom: 1px dashed $altGrey

@@ -1,0 +1,61 @@
+//==>IMPORTING:
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+section.TeamWrapper
+  margin: 5rem 0 1rem
+  text-align: center
+  h2.heading
+    color: $altBlack
+    margin-top: 3rem
+    margin-bottom: 1rem
+    font-size: 2rem
+  p.desc
+    color: $altBlack
+    font-size: 18px
+  div.memberSlider
+    margin: 3rem 0 0
+    .alice-carousel
+      .alice-carousel__dots-item
+        display: inline-block
+        width: 2rem
+        height: 0.4rem
+        cursor: pointer
+        border-radius: 1rem
+        &:hover
+          background: $altColor
+      .alice-carousel__dots-item.__active
+        background: $altColor
+    .teamMember
+      margin: 0 0.3rem
+      cursor: grab
+      height: 30rem
+      &:hover
+        .memberImg
+          margin-top: -1rem
+      .memberImg
+        width: 100%
+        height: calc( 100% -  5rem)
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: $mainTransition
+        > div
+          border-radius: 1rem
+          width: 25rem
+          height: calc( 100% - 3rem )
+          position: relative
+          box-shadow: $lightShadow
+        .role
+          position: absolute
+          color: $altBlack
+          top: 1rem
+          left: 1rem
+          padding: 0.4rem 0.8rem
+          background: $trabsWhite
+          border-radius: 1rem
+          font-weight: bold
+      .memberName
+        margin-top: 1rem
+        height: 5rem
+        font-family: $italicFont

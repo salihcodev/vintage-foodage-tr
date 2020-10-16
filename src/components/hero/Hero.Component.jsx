@@ -19,9 +19,9 @@ const Hero = ({ children }) => {
       <div className="hero">
         <Container>
           <section className="heroContainer">
-            <p className="heroFlag">
+            <h5 className="heroFlag">
               <span>{HeroFlag}</span>
-            </p>
+            </h5>
             <h1 className="homeHeroHeading">{HeroHeading}</h1>
             <p className="homeHeroDescription">{HeroDescription}</p>
             {children}

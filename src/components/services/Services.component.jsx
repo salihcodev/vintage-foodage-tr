@@ -13,8 +13,8 @@ import { v4 as uuid } from 'uuid';
 import { BsArrowRight } from 'react-icons/bs';
 
 // ==> COMPONENT DATA:
-const title = 'About';
-const subTitle = 'Us';
+const title = 'What We ';
+const subTitle = 'Provide';
 const serHeading = 'Welcome to Our Restaurant';
 const serDescription =
   'Since 1999, our restaurant is the center of coziness, comfort, and tasty dishes available to our every visitor and guest';

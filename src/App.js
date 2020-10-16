@@ -12,11 +12,12 @@ import CartPage from './views/cart/Cart.Page';
 import CheckoutPage from './views/checkout/Checkout.Page';
 import ErrorPage from './views/error/Error.Page';
 import LoginPage from './views/login/Login.Page';
-import RecipesPage from './views/recipes/Recipes.Page'
+import RecipesPage from './views/recipes/Recipes.Page';
 import RecipeDetailsPage from './views/recipe-details/RecipeDetails.Page';
 
 // ==> COMPONENTS:
 import Header from './components/header/Header.Component';
+import ToTopBtn from './components/to-top-btn/ToTop.component';
 
 // ==> vintage ROOT APP:
 export default function App() {
@@ -24,6 +25,8 @@ export default function App() {
     <Router>
       {/* header component 'navbar' */}
       <Header />
+      {/* to top button */}
+      <ToTopBtn />
 
       <Switch>
         {/* pome page */}
