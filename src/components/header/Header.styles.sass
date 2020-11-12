@@ -3,15 +3,17 @@
 
 // header
 nav.header
-  height: 4rem
+  height: 5rem
   display: flex
   justify-content: space-around
-  background-color: $mainWhite
+  background-color: $yellowGray
+  padding: 0 1rem
 
   .appLogo
-    height: 80px
+    height: 70px
     text-align: center
     img
+      width: 90%
       height: 100%
       display: block
 
@@ -30,9 +32,25 @@ nav.header
         color: $primaryColor
         text-decoration: none
 
-  ul.userRoutes
+  ul.navRoutes
     margin: 0
     li.navRoute
+      &:nth-last-child(2)
+        a
+          background: $altColor
+          margin: 10px
+          min-height: 2rem
+          min-width: 5rem
+          display: flex
+          align-items: center
+          justify-content: center
+          border-radius: 2rem
+          text-decoration: none
+          color: $offWhite
+          transition: $altTransition
+          &:hover
+            background: $altDarkColor
+
       &:last-child
         position: relative
         span.cartIcon
@@ -47,10 +65,11 @@ nav.header
             left: 16px
             display: block
             text-align: center
-            font-size: 15px
+            font-size: 12px
             border-radius: 50%
-            width: 24px
-            height: 24px
-            justify-content: center
+            width: 1.5rem
+            height: 1.5rem
+            text-align: center
             display: flex
             align-items: center
+            justify-content: center

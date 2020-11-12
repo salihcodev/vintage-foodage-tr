@@ -4,6 +4,7 @@ import './style.sass';
 // ==> UTILITIES:
 import { ProductContext } from '../../context/recipes.context';
 import { Link } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
 
 // ==> VIEWER:
 const RecipeCard = ({ recInfo }) => {
@@ -26,24 +27,30 @@ const RecipeCard = ({ recInfo }) => {
       title={recipeName}
     >
       <div className="cardContent">
-        <h3 className="recipeName">{recipeName}</h3>
-        <div className="btnsContainer">
-          <Link
-            className="seeFullRecipe"
-            to={`/recipes/${slug}`}
-            onClick={() => getClickedRecipe(slug)}
-          >
-            full details
-          </Link>
+        <div className="textCont">
+          <div className="flexShield">
+            <h3 className="recipeName">{recipeName}</h3>
+            <Link
+              className="seeFullRecipe"
+              to={`/recipes/${slug}`}
+              onClick={() => getClickedRecipe(slug)}
+            >
+              details
+            </Link>
+          </div>
+        </div>
+        <nav className="recipeFooter">
           <Link
             className="putRecipeToCart"
             to="/recipes"
             onClick={() => addRecipeToCart(id)}
           >
-            add to cart
+            <strong>
+              <FiShoppingCart />
+            </strong>
           </Link>
-        </div>
-        <span className="recipePrice">${price}</span>
+          <strong className="recipePrice">${price}</strong>
+        </nav>
       </div>
     </div>
   );

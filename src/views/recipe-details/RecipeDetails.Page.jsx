@@ -31,7 +31,7 @@ const testCards = [
 ];
 
 const RecipesDetailsPage = () => {
-  const { getLocalStorageRecipe, addRecipeToCart } = React.useContext(
+  const { getLocalRecipe, addRecipeToCart, goToTop } = React.useContext(
     ProductContext,
   );
   const {
@@ -43,7 +43,7 @@ const RecipesDetailsPage = () => {
     recipeDetails,
     ingredients: { ingredients },
     recipeImgs,
-  } = getLocalStorageRecipe();
+  } = getLocalRecipe();
 
   // get first image and title of recipe.
   const coverImg = recipeImgs[0].url;
@@ -96,7 +96,10 @@ const RecipesDetailsPage = () => {
               <Link
                 to="/cart-contents"
                 className="addToCart"
-                onClick={() => addRecipeToCart(id)}
+                onClick={() => {
+                  addRecipeToCart(id)
+                  goToTop()
+                }}
               >
                 add recipe to cart
               </Link>

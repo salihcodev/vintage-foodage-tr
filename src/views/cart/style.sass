@@ -1,2 +1,20 @@
 //==>IMPORTING:
 @import "../../styles/vars"
+@import "../../styles/mixins"
+
+button.wipeCart
+  span.icon
+    font-size: 1.5rem
+    margin-top: -7px
+    margin-right: 0.5rem
+  @include heroBtn
+  margin: 5rem 0
+  display: flex
+  align-items: center
+
+section.cartItemsList
+  margin-bottom: 5rem
+
+@media screen and ( max-width:  769px)
+  button.wipeCart
+    margin: 5rem auto

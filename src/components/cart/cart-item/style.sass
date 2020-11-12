@@ -1,0 +1,77 @@
+//==>IMPORTING:
+@import "../../../styles/vars"
+@import "../../../styles/mixins"
+
+.cartPageWrapper
+  padding: 5rem 0
+  .cartItemsList
+    li.cartItem
+      padding: 0 0 1rem
+      &:not(:last-child)
+        .itemWrapper
+          border-bottom: 1px solid $darkGrey
+      .itemWrapper
+        padding: 1rem 0
+        display: flex
+        align-items: center
+        justify-content: center
+        .itemImg
+          flex-grow: 1
+          height: 10rem
+          width: 10rem
+          border-radius: 1rem
+          img
+            width: 100%
+            height: 100%
+            border-radius: 1rem
+        .name
+          text-align: center
+          flex-grow: 2
+          color: $primaryColor
+        .controllers
+          flex-grow: 1
+          display: flex
+          justify-content: space-around
+          align-items: center
+          .increaseItem,
+          .decreaseItem,
+            background: $offWhite
+            color: $altBlack
+            border: 1px solid $altGrey
+        .price
+          text-align: center
+          flex-grow: 1
+        .remove
+          .deleteItem
+            background: $altColor
+            color: $mainWhite
+
+        // controllers
+        .increaseItem,
+        .decreaseItem,
+        .deleteItem
+          width: 2rem
+          height: 2rem
+          font-size: 22px
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 8px
+          transition: $altTransition
+          cursor: pointer
+          &:hover
+            transform: scale(1.1)
+
+@media screen and ( max-width:  769px)
+  .cartPageWrapper
+    .cartItemsList
+      .cartItem
+        .itemWrapper
+          display: block !important
+          .itemImg
+            display: contents
+          .name
+            margin: 1rem 0
+          .remove
+            .deleteItem
+              margin: 2rem auto

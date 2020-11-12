@@ -1,0 +1,40 @@
+//==>IMPORTING:
+@import "../../../styles/vars"
+@import "../../../styles/mixins"
+
+.cartInfo
+  height: 100%
+  .cartInfoWrapper
+    border: 1px solid $alertBorder
+    border-radius: 0.7rem
+    .cartHistoryHeader
+      h3.cartHistory
+        text-transform: uppercase
+        font-family: $italicFont
+        height: 5rem
+        padding: 1rem
+        margin-bottom: 3rem
+        background: url('../../../assets/body-cover.svg') center/cover
+        strong
+          letter-spacing: 0.3rem
+          word-spacing: 0.3rem
+    .cartHistoryBody
+      padding: 1rem
+      h5.subtotal
+      h5.total
+      button.checkoutBtn
+        @include heroBtn
+        display: block
+        width: 100%
+        margin-top: 5rem
+        background: $altColor
+        color: $offWhite
+        &:hover
+          background: $trabsWhite
+          color: $altBlack
+
+
+
+@media screen and ( max-width:  769px)
+  .cartInfo
+    text-align: center
