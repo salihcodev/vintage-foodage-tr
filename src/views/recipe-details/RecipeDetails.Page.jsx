@@ -2,6 +2,9 @@
 import React from 'react';
 import './style.sass';
 
+// ==> COMPONENTS:
+import RecipeVideoDirections from '../../components/recipe-video-directions/recipe-video-directions.comp';
+
 // ==> UTILITIES:
 import { ProductContext } from '../../context/recipes.context';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -43,6 +46,7 @@ const RecipesDetailsPage = () => {
     id,
     price,
     recipeDetails,
+    recipeVideo,
     ingredients: { ingredients },
     directions: { directions },
     recipeImgs,
@@ -183,6 +187,9 @@ const RecipesDetailsPage = () => {
                     ))}
                   </ul>
                 </div>
+
+                {/* directions video */}
+                <RecipeVideoDirections recipeHint={recipeVideo} />
               </section>
             </div>
           </Col>
