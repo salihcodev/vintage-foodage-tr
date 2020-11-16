@@ -31,10 +31,12 @@ const Opening = () => {
           <div className="openCards">
             <Row>
               {openingData.map(({ img, title, list }) => (
-                <Col key={uuid()}>
+                <Col lg={4} md={6} sm={12} key={uuid()}>
                   <div className="openCard">
                     <div className="cardHeader">
-                      <h5 className="title">{title}</h5>
+                      <h5 className="title">
+                        <strong>{title}</strong>
+                      </h5>
                       <div className="cardImg">
                         <img src={img} alt="" />
                       </div>

@@ -24,10 +24,8 @@ const HomePage = () => {
     <>
       <section className="homePageViewer">
         <Hero>
-          <Link to="/recipes">
-            <button type="button" className="HomeHeroToProducts">
-              All Recipes
-            </button>
+          <Link to="/recipes" type="button" className="HomeHeroToProducts">
+            All Recipes
           </Link>
         </Hero>
         {/* hero */}

@@ -5,31 +5,36 @@ import './Founders.styles.sass';
 
 // ==> UTILITIES:
 import { Card, Row, Col } from 'react-bootstrap';
+import { v4 as uID } from 'uuid';
 
 const Founders = ({ CompanyFoundersData }) => {
   return (
     <>
       <section className="companyFounders">
-        <h4 className="foundersHeading">Founders</h4>
+        <h4 className="foundersHeading">
+          <b>Founders</b>
+        </h4>
         <div className="companyFoundersContainer">
           <Row>
             {CompanyFoundersData.map((data) => (
-              <Col key={data.id}>
+              <Col lg={4} md={6} xs={12}  key={uID()}>
                 <Card>
                   <Card.Img
                     variant="top"
-                    src="https://fakeimg.pl/350x200/?text=founder"
+                    src={data.img}
                     alt={data.name}
                   />
                   <Card.Body>
-                    <h4>
-                      <Card.Title>{data.name}</Card.Title>
+                    <h4 className='founderName'>
+                      <Card.Title>
+                        <b>{data.name}</b>
+                      </Card.Title>
                     </h4>
                     <h6>{data.title}</h6>
                     <Card.Text>{data.founderSummary}</Card.Text>
                     <ul className="socialMediaList">
                       {data.contacts.map((contact) => (
-                        <li key={contact.id}>
+                        <li key={uID()}>
                           <a href="/">{contact.icon}</a>
                         </li>
                       ))}

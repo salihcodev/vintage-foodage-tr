@@ -12,21 +12,29 @@ import {
   Company,
   companyExperience,
 } from './comps-data/Footer.data';
+import { CompanyData, CompanyFounders } from './comps-data/About.data';
 
 // create react context:
 export const ProductContext = React.createContext();
 
 // ==> PROVIDER:
 const ProductProvider = ({ children }) => {
-  const [loading, setLoading] = useState(false);
-  const [recipes, setRecipes] = useState([]);
-  const [featured, setFeatured] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [toTopBtn, setToTopBtn] = useState(false);
+  const [isXsScreen, setIsXsScreen] = useState(false);
+  const [showSearchResult, setShowSearchResult] = useState(false);
+  const [popularRecipes, setPopularRecipes] = useState([]);
   const [cartList, setCartList] = useState([]);
-  const [totalCartItemsPrice, setTotalCartItemsPrice] = useState(0);
-  const [subtotalCartItemsPrice, setSubtotalCartItemsPrice] = useState(0);
+  const [recipes, setRecipes] = useState([]);
+  const [recipesToFilter, setRecipesToFilter] = useState([]);
   const [totalTax, setTotalTax] = useState(0);
   const [totalCartItems, setTotalCartItems] = useState(0);
+  const [totalCartItemsPrice, setTotalCartItemsPrice] = useState(0);
+  const [subtotalCartItemsPrice, setSubtotalCartItemsPrice] = useState(0);
+  const [sudoErrorHandler, setSudoErrorHandler] = useState({
+    errMsg: '',
+    show: false,
+  });
 
   React.useEffect(() => {
     client
@@ -39,8 +47,9 @@ const ProductProvider = ({ children }) => {
 
   // ==> CALCULATE CONTENTFUL API:
   const destructeurAPICall = (items) => {
+    setLoading(true);
     let finalRecipesArr = items.map((item) => {
-      // get th ID
+      // get the ID
       const { id } = item.sys;
       // get recipes arr of imgs
       const recipeImgs = item.fields.recipeImgs.map(({ fields }) => {
@@ -60,11 +69,20 @@ const ProductProvider = ({ children }) => {
       (recipe) => recipe.popular === true,
     );
     // send destructeur recipes arr to it's HOOK:
-    setFeatured(featuredRecipes);
-
-    // send destructeur recipes arr to it's HOOK:
+    setPopularRecipes(featuredRecipes);
     setRecipes(finalRecipesArr);
+    setRecipesToFilter(finalRecipesArr);
+    setLoading(false);
   };
+
+  // ==> UTILITIES
+  // error handler
+  const toggleErrorHandler = (errMsg, show) => {
+    setSudoErrorHandler({ errMsg, show });
+  };
+
+  // extra small screen toggler
+  const toggleXsHeader = () => setIsXsScreen((state) => !state);
 
   // ==> SINGLE RECIPE FUNCTIONALITY:
   const getClickedRecipe = (slug) => {
@@ -78,7 +96,7 @@ const ProductProvider = ({ children }) => {
     });
   };
 
-  // ==> PLAY LOCALSTORAGE:
+  // ==> PLAY WITH LOCALSTORAGE:
   // SINGLE RECIPE:
   // set this single-recipe to localStorage
   const syncSingleRecipe = (singleRecipe) => {
@@ -127,6 +145,7 @@ const ProductProvider = ({ children }) => {
 
     // stor cart to local
     syncCartContents(tempCart);
+    // get cart totals [taxes, subtotal, total]
     getCartTotal();
   };
 
@@ -206,6 +225,31 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  // ==> SETUP TO SEARCHING FUNCTIONALITY:
+  // SEARCH QUERY:
+  const filterByTitle = (searchQuery) => {
+    let AllRecipes = [...recipesToFilter];
+
+    if (searchQuery.length >= 3) {
+      setLoading(true);
+      toggleErrorHandler(``, false);
+      setShowSearchResult(true);
+      let searchResult = AllRecipes.filter((item) => {
+        const cleanSearchName = item.recipeName.toLowerCase();
+        return cleanSearchName.includes(searchQuery);
+      });
+      setLoading(false);
+      setRecipesToFilter(searchResult);
+    } else {
+      setRecipesToFilter(recipes);
+      setShowSearchResult(false);
+      toggleErrorHandler(
+        `Your search query should be at least 3 character`,
+        true,
+      );
+    }
+  };
+
   const getCartTotal = () => {
     calcCartTotals(getLocalCart());
   };
@@ -220,13 +264,13 @@ const ProductProvider = ({ children }) => {
   };
 
   // ==> SETUP TO TOP BUTTON FUNCTIONALITY:
-
   function scrolledSpace() {
     if (this.scrollY >= 900) setToTopBtn(true);
     else setToTopBtn(false);
   }
   window.onscroll = scrolledSpace;
 
+  // LIFE CYCLES:
   useEffect(() => {
     if (getLocalCart().length === 0) {
       console.log();
@@ -241,28 +285,38 @@ const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         loading,
+        Support,
         recipes,
         goToTop,
-        featured,
-        toTopBtn,
-        teamMembers,
-        Projects,
-        Support,
         Company,
-        companyExperience,
-        openingData,
-        servicesData,
-        getClickedRecipe,
-        getLocalRecipe,
-        addRecipeToCart,
-        decreaseItemFromCart,
-        removeRecipeFromCart,
-        cartList,
-        totalCartItems,
-        totalCartItemsPrice,
-        subtotalCartItemsPrice,
-        totalTax,
+        Projects,
+        toTopBtn,
         wipeCart,
+        cartList,
+        totalTax,
+        isXsScreen,
+        openingData,
+        teamMembers,
+        CompanyData,
+        servicesData,
+        filterByTitle,
+        popularRecipes,
+        toggleXsHeader,
+        totalCartItems,
+        getLocalRecipe,
+        CompanyFounders,
+        addRecipeToCart,
+        recipesToFilter,
+        showSearchResult,
+        getClickedRecipe,
+        sudoErrorHandler,
+        companyExperience,
+        totalCartItemsPrice,
+        setShowSearchResult,
+        setSudoErrorHandler,
+        removeRecipeFromCart,
+        decreaseItemFromCart,
+        subtotalCartItemsPrice,
       }}
     >
       {children}

@@ -8,6 +8,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
+import ChefHat from '../../assets/chef.svg';
+import OpenBook from '../../assets/open-book.svg';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -42,15 +44,16 @@ const RecipesDetailsPage = () => {
     price,
     recipeDetails,
     ingredients: { ingredients },
+    directions: { directions },
     recipeImgs,
   } = getLocalRecipe();
 
   // get first image and title of recipe.
   const coverImg = recipeImgs[0].url;
-    // reset window title:
-    React.useEffect(() => {
-      document.title = `Foodage | ${recipeName}`;
-    });
+  // reset window title:
+  React.useEffect(() => {
+    document.title = `Foodage | ${recipeName}`;
+  });
   return (
     <div className="singleRecipeWrapper">
       <Container fluid>
@@ -59,22 +62,35 @@ const RecipesDetailsPage = () => {
             <aside className="lightInfo">
               <span className="price">${price}</span>
               {popular && (
-                <span className="popular">The recipe is soo popular</span>
+                <span className="popular">This recipe is soo popular</span>
               )}
               <p className="deliveryTime">
-                this order will take 5min to be done and {deliveryTime}min to
-                reach you :)
+                Order will take <b>5min</b> to be done and{' '}
+                <b>{deliveryTime}min</b> to reach you :)
               </p>
               <div className="rating">
                 <p className="ratingPerc">
-                  <BsStarFill />
-                  <BsStarFill />
-                  <BsStarFill />
-                  <BsStarFill />
-                  <BsStarHalf />
+                  <span>
+                    <BsStarFill />
+                  </span>
+                  <span>
+                    <BsStarFill />
+                  </span>
+                  <span>
+                    <BsStarFill />
+                  </span>
+                  <span>
+                    <BsStarFill />
+                  </span>
+                  <span>
+                    <BsStarHalf />
+                  </span>
+                  <h6 className="rateNum">
+                    <strong>4.8/5</strong>
+                  </h6>
                 </p>
                 <div className="testimonialsWrapper">
-                  <h6>our clients about this recipe</h6>
+                  <h6>our clients opinions about this recipe</h6>
                   <div className="testimonials">
                     <AliceCarousel
                       mouseTracking
@@ -97,8 +113,8 @@ const RecipesDetailsPage = () => {
                 to="/cart-contents"
                 className="addToCart"
                 onClick={() => {
-                  addRecipeToCart(id)
-                  goToTop()
+                  addRecipeToCart(id);
+                  goToTop();
                 }}
               >
                 add recipe to cart
@@ -124,12 +140,14 @@ const RecipesDetailsPage = () => {
                 ))}
               </section>
               <section className="recipeInfo">
-                <h2>{recipeName}</h2>
+                <h2>
+                  <strong>{recipeName}</strong>
+                </h2>
                 <p className="dec">{recipeDetails}</p>
 
                 {/* Ingredients */}
                 <div className="ingredients">
-                  <h4>ingredients</h4>
+                  <h4>Ingredients</h4>
                   <ul>
                     <p className="flags">
                       <span className="title">Title</span>
@@ -141,6 +159,26 @@ const RecipesDetailsPage = () => {
                           <span className="title">{title}: </span>
                           <span className="quantity">{quantity}</span>
                         </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Directions */}
+                <div className="directions">
+                  <h4>Directions</h4>
+                  <ul>
+                    <span className="bookFlag">
+                      <img src={OpenBook} alt="" />
+                    </span>
+                    {directions.map(({ direction }) => (
+                      <li key={uuid()} className="directionWrapper">
+                        <div>
+                          <span className="icon">
+                            <img src={ChefHat} alt="" />
+                          </span>
+                        </div>
+                        <p className="direction">{direction}</p>
                       </li>
                     ))}
                   </ul>

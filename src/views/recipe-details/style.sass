@@ -4,8 +4,10 @@
 
 div.singleRecipeWrapper
   margin-top: 5rem
-  .lightInfo
+  padding: 1rem
+  aside.lightInfo
     padding: 2rem 1rem 0
+    margin-bottom: 8rem
     span.price
       display: flex
       align-items: center
@@ -27,11 +29,19 @@ div.singleRecipeWrapper
     p.deliveryTime
       color: $altBlack
       font-size: 17px
+      margin-left: 0.2rem
     div.rating
       margin-top: 2rem
       p.ratingPerc
+        color: #e6d543
+        font-size: 20px
         margin: 0
         padding: 0
+        span
+          margin: 2px
+        h6.rateNum
+          color: $altBlack
+          margin-top: 0.5rem
     .testimonialsWrapper
       padding-top: 3rem
       h6
@@ -50,9 +60,8 @@ div.singleRecipeWrapper
           color: $altBlack
           font-size: 18px
           padding: 1rem
-          margin-right: 1rem
     a.addToCart
-      margin-top: 5rem
+      margin-top: 1rem
       text-align: center
       display: block
       max-width: 13rem
@@ -60,7 +69,6 @@ div.singleRecipeWrapper
       @include heroBtn
 
   .descriptiveInfo
-    padding: 2rem
     div.recipeMainImg
       border-radius: 1rem
       .row
@@ -69,6 +77,10 @@ div.singleRecipeWrapper
         width: 100%
         height: 100%
         border-radius: 1rem
+        transition: $altTransition
+        &:hover
+          filter: saturate(0.5)
+          transform: scale(0.95)
     section.recipeImgs
       display: flex
       flex-wrap: wrap
@@ -80,6 +92,11 @@ div.singleRecipeWrapper
         width: 8rem
         height: 5rem
         margin: 0.5rem
+        opacity: 0.8
+        transition: $altTransition
+        &:hover
+          opacity: 1
+          transform: scale(1.05)
         img
           width: 100%
           height: 100%
@@ -118,3 +135,50 @@ div.singleRecipeWrapper
 
             &:not(:last-child)
               border-bottom: 1px solid $altGrey
+      div.directions
+        margin-top: 5rem
+        ul
+          position: relative
+          z-index: 5
+          margin-top: 5rem
+          span.bookFlag
+            content: ''
+            background: $altBlack
+            width: 4rem
+            top: -55px
+            position: absolute
+            left: 0
+            height: 3rem
+            border-radius: 0.5rem
+            padding: 0.6rem
+            display: flex
+            align-items: center
+            justify-content: center
+          &::after
+            content: ''
+            background: $altBlack
+            width: 0.5rem
+            top: -10px
+            bottom: 0
+            display: block
+            position: absolute
+            left: 28px
+            z-index: -1
+          li.directionWrapper
+            border: 1px solid $darkGrey
+            border-radius: 1rem
+            padding: 0.5rem
+            display: flex
+            align-items: flex-start
+            margin: 2rem 0
+            background: $offWhite
+            span.icon
+              width: 2rem
+              height: 2rem
+              display: block
+              border-radius: 50%
+              margin: 0.5rem
+              padding: 0.3rem
+              background: $primaryColor
+            p
+              color: $altBlack

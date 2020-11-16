@@ -17,7 +17,7 @@ const RecipeCard = ({ recInfo }) => {
 
   // set the style to card component
   const recipeCardImgStyle = {
-    background: `linear-gradient(45deg, #80c29d44, #0007), url(${coverImg}) center/cover`,
+    background: `linear-gradient(45deg, #bb6b6b5e, #0009), url(${coverImg}) center/cover`,
   };
   return (
     <div

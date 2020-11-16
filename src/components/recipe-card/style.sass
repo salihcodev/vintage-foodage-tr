@@ -8,9 +8,11 @@
   border: 2px solid #fff
   transition: $altTransition
   padding: 1rem
+  margin: 0.5rem 0;
   width: 100%
   height: 100%
   border-radius: 0.7rem
+  transition: $altTransition
   &:nth-child(2)
     grid-column: auto / span 2
   &:nth-child(3)
@@ -21,6 +23,7 @@
     grid-row: auto / span 2
   &:hover
     opacity: 1
+    transform: scale(0.95)
     .cardContent
       opacity: 1
   .cardContent
@@ -28,8 +31,8 @@
     opacity: 0
     text-align: center
     transition: $altTransition
+    display: grid
     .textCont
-      height: 90%
       display: flex
       align-items: center
       justify-content: center
@@ -47,7 +50,7 @@
           color: $mainBlack
     nav.recipeFooter
       display: flex
-      align-items: center
+      align-items: flex-end
       justify-content: space-between
       a.putRecipeToCart
         strong
@@ -63,3 +66,8 @@
           color: $offWhite
       strong.recipePrice
         color: $offWhite
+
+@media screen and ( max-width:  990px)
+  .recipeCard,
+  .cardContent
+    min-height: 20rem !important

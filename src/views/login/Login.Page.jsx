@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.sass';
 
 const LoginPage = () => {
   // reset window title:
@@ -6,8 +7,8 @@ const LoginPage = () => {
     document.title = `Foodage | Login`;
   });
   return (
-    <div>
-      <h1>LoginPage</h1>
+    <div className="loginViewer">
+      <strong>LoginPage will be ready soon!</strong>
     </div>
   );
 };

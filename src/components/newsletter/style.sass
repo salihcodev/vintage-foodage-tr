@@ -7,8 +7,8 @@ section.newsletterWrapper
   align-items: center
   justify-content: center
   min-height: 70vh
-  padding: 3rem 0
-  background: linear-gradient(to bottom, #000000c7,#fff4), url("../../assets/cooking.jpeg") center/cover
+  padding: 3rem
+  background: linear-gradient(45deg, #00000018, #000), url("../../assets/cooking.jpeg") center/cover no-repeat
   div.newsletter
     text-align: center
     h5.newsFlag
@@ -47,19 +47,25 @@ section.newsletterWrapper
           margin-right: 1.5rem
           flex-grow: 1
           background: none
-          outline: none
           color: $offWhite
           border: 1px solid $altraTrabsWhite
           padding: 1rem 2rem
           border-radius: 3rem
           background: $altraTrabsWhite
           &::placeholder
-            color: $offWhite          
+            color: $offWhite
         > input[type="submit"]
           @include heroBtn
           border-color: transparent
           background: $altColor
           color: $offWhite
+          padding: 1rem 2rem
+          font-size: 15px
           &:hover
             color: $mainBlack
             background: $offWhite
+
+@media screen and ( max-width:  769px)
+  input[type="email"],
+  input[type="submit"]
+    padding: 0.7rem !important

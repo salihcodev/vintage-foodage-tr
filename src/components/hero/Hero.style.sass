@@ -2,13 +2,12 @@
 @import "../../styles/vars"
 @import "../../styles/mixins"
 
-div.hero
+section.hero
   background: url("../../assets/main-hero-bkg.svg") center/cover
-  height: calc( 100vh - 4rem )
+  height: 120vh
   display: flex
   align-items: center
   justify-content: flex-start
-  padding-left: 70px
   section.heroContainer
     width: 70vw
   h5.heroFlag
@@ -37,7 +36,6 @@ div.hero
     font-size: 1.5rem
     color: $altColor
     margin-left: 10px
-    width: 40vw
-
-  button
+  a
+    box-shadow: 0 0 5px 5px #c8ae4e
     @include heroBtn

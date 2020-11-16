@@ -18,13 +18,17 @@
     word-spacing: 1rem
 .recipesPageWrapper
   margin-top: 5rem
-  aside.recipesFilter
-    padding: 2rem 1rem
   section.recipesContainer
-    padding: 2rem 1rem
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-template-rows: repeat(3, 20rem 20rem 15rem)
     min-height: 100vh
-    grid-gap: 1.5rem
- 
+    grid-gap: 0.5rem
+  section.noRecipesFounded
+    min-height: 100vh
+    text-align: center
+
+@media screen and ( max-width:  990px)
+  // min-height: 20rem;
+  section.recipesContainer
+    display: block !important

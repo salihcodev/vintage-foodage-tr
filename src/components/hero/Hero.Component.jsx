@@ -16,7 +16,7 @@ const HeroDescription =
 const Hero = ({ children }) => {
   return (
     <>
-      <div className="hero">
+      <section className="hero">
         <Container>
           <section className="heroContainer">
             <h5 className="heroFlag">
@@ -27,7 +27,7 @@ const Hero = ({ children }) => {
             {children}
           </section>
         </Container>
-      </div>
+      </section>
     </>
   );
 };
