@@ -21,7 +21,7 @@ const PopularRecipesWrapper = () => {
 
   const defaultMouseDragging = (e) => e.preventDefault();
 
-  const { popularRecipes } = React.useContext(ProductContext);
+  const { popularRecipes, goToTop } = React.useContext(ProductContext);
   const popularRecipesToView = popularRecipes.map(
     ({ recipeName, slug, recipeImgs }) => {
       const coverImg = recipeImgs[0].url;
@@ -37,8 +37,10 @@ const PopularRecipesWrapper = () => {
             <h6 className="recipeName">
               <strong>{recipeName}</strong>
             </h6>
-            <div className='linkCont'>
-              <Link to={`/recipes/${slug}`}>View</Link>
+            <div className="linkCont">
+              <Link to={`/recipes/${slug}`} onClick={goToTop}>
+                View
+              </Link>
             </div>
           </div>
         </div>

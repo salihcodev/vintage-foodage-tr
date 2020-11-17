@@ -4,10 +4,11 @@
 
 section.hero
   background: url("../../assets/main-hero-bkg.svg") center/cover
-  height: 120vh
+  height: calc( 100vh -  4rem)
   display: flex
   align-items: center
   justify-content: flex-start
+  margin-bottom: 5rem
   section.heroContainer
     width: 70vw
   h5.heroFlag
@@ -37,5 +38,9 @@ section.hero
     color: $altColor
     margin-left: 10px
   a
-    box-shadow: 0 0 5px 5px #c8ae4e
     @include heroBtn
+    background: $altColor
+    color: $altGrey
+    &:hover
+      background: $altDarkColor
+      border-color: $altDarkColor
